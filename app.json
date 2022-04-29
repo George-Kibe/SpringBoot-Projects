@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "airbnb_clone",
+    "slug": "airbnb_clone",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
