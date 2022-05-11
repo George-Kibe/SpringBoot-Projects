@@ -1,19 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Entype from "react-native-vector-icons"
+import Entype from "react-native-vector-icons/Entypo"
+import { SafeAreaView, StatusBar } from 'react-native';
+import HomeScreen from './src/screens/Home';
 
 
-export default function App() {
+ const App = () =>{
   return (
-    <View style={styles.container}>
-      <Text>AirBnb here we go!</Text>
-      <Text>AirBnb here we go!</Text>
-      <Entype name={"home"} size={24} />
-      <StatusBar style="auto" />
-    </View>
+    <>      
+      <StatusBar style='auto' barStyle='dark-content' />
+      <SafeAreaView>
+        <HomeScreen />
+      </SafeAreaView>      
+    </>
   );
 }
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
