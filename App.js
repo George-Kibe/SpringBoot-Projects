@@ -1,11 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Entype from "react-native-vector-icons/Entypo"
+import Entypo from "react-native-vector-icons/Entypo"
 import { SafeAreaView, StatusBar } from 'react-native';
 import HomeScreen from './src/screens/Home';
+import SearchResultsScreen from './src/screens/SearchResults';
+import LocationSearchScreen from './src/screens/LocationSearch';
+
 import Property from './src/components/Property';
 import feed from './assets/data/feed';
-import SearchResultsScreen from './src/screens/SearchResults';
+
 
 const property0 = feed[0];
 const property1 = feed[3];
@@ -13,10 +16,9 @@ const property1 = feed[3];
 const App = () =>{
   return (
     <>      
-      <StatusBar style='auto' barStyle='dark-content' />
+      <StatusBar style='auto' /> 
       <SafeAreaView>
-        {/* <Property property={property0}/> */}
-        <SearchResultsScreen />
+        <LocationSearchScreen />
       </SafeAreaView>      
     </>
   );
