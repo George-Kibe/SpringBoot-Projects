@@ -9,7 +9,7 @@ export default function App() {
     <View style={styles.container}>
       <Text>AirBnb here we go!</Text>
       <Text>AirBnb here we go!</Text>
-      {/* <Entype name={"Analytics"} /> */}
+      <Entype name={"home"} size={24} />
       <StatusBar style="auto" />
     </View>
   );
