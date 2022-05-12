@@ -19,8 +19,8 @@ const Router = () => {
             options={{headerShown:false}} />
           <Stack.Screen name="Location Search" component={LocationSearchScreen}
             options={{title:"Search by Locations"}} />
-          {/* <Stack.Screen name="Accommodation Details" component={GuestsScreen}
-            options={{title:"Accommodation Details"}} /> */}
+          <Stack.Screen name="Accommodation Details" component={GuestsScreen}
+            options={{title:"Accommodation Details"}} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider> 
