@@ -5,6 +5,7 @@ import { SafeAreaView, StatusBar } from 'react-native';
 import HomeScreen from './src/screens/Home';
 import SearchResultsScreen from './src/screens/SearchResults';
 import LocationSearchScreen from './src/screens/LocationSearch';
+import GuestsScreen from './src/screens/Guests';
 
 import Property from './src/components/Property';
 import feed from './assets/data/feed';
@@ -16,9 +17,9 @@ const property1 = feed[3];
 const App = () =>{
   return (
     <>      
-      <StatusBar style='auto' /> 
+      <StatusBar style='auto'/> 
       <SafeAreaView>
-        <LocationSearchScreen />
+        <GuestsScreen />
       </SafeAreaView>      
     </>
   );
