@@ -25,7 +25,7 @@ const GuestsScreen = () => {
           </Pressable>
         </View>
       </View>
-      <View>
+      
       <View style={styles.row}>
         <View>
           <Text style={{fontWeight:'bold'}}>Children</Text>
@@ -45,6 +45,6 @@ const GuestsScreen = () => {
       </View>
     </View>
   )
-}
+};
 
-export default GuestsScreen
+export default GuestsScreen;
