@@ -11,21 +11,24 @@ import searchResults from '../../../assets/data/search'
 const LocationSearchScreen = () => {
   const navigation = useNavigation()
   const [inputText, setInputText] = useState("")
-  const APIKEY="AIzaSyBzQgNWBd_w0HuZkA8UBoAYQ4GauBj52Fk"
+  const APIKEY="AIzaSyDnMX-u2MkG1b4UcuakpWfMNK7OQmGmHa4"
 
   return (
     <View style={styles.container}>
       <View style={styles.searchBox}>
-        <GooglePlacesAutocomplete placeholder='Search Properties by Location...'
-          onPress={(data, details = null) => {
-          // 'details' is provided when fetchDetails = true
-          console.warn(data, details);
-          }}
-          query={{
-            key: APIKEY,
-            language: 'en',
-          }}
-        />
+        <View style={{height:200}}>
+          <GooglePlacesAutocomplete placeholder='Search Properties by Location...'
+            styles={styles.textInput}
+            onPress={(data, details = null) => {
+            // 'details' is provided when fetchDetails = true
+            console.warn(data, details);
+            }}
+            query={{
+              key: APIKEY,
+              language: 'en',
+            }}
+          />
+        </View>
         <TextInput style={styles.textInput} 
             placeholder="Search for Favourite Locations..."
             value={inputText}

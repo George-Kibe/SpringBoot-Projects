@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
         flexDirection:'column',
     },
     textInput:{
-        marginTop:50,
         fontSize:20,
         marginBottom:20
     },
