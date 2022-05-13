@@ -24,12 +24,12 @@ const HomeTabNavigator = () => {
       />
       <Tab.Screen name={"Saved"} component={SearchResultsScreen}
         options={{
-            tabBarIcon: ({color}) =>(<FontAwesome name="heart-o" size={25} color={color} />)
+            tabBarIcon: ({color}) =>(<FontAwesome name="heart" size={25} color={color} />)
             }}
       />
-      <Tab.Screen name={"AirBnb"} component={HomeScreen}
+      <Tab.Screen name={"Buenas"} component={HomeScreen}
         options={{
-            tabBarIcon: ({color}) =>(<FontAwesome5 name="airbnb" size={25} color={color} />)
+            tabBarIcon: ({color}) =>(<FontAwesome5 name="building" size={25} color={color} />)
             }}
       />
       <Tab.Screen name={"Messages"} component={HomeScreen}

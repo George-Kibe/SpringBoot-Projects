@@ -5,10 +5,12 @@ const styles = StyleSheet.create({
         margin:20,
     },
     searchBox:{
-        flexDirection:'row',
+        flexDirection:'column',
     },
     textInput:{
+        marginTop:50,
         fontSize:20,
+        marginBottom:20
     },
     row:{
         flexDirection:'row',
