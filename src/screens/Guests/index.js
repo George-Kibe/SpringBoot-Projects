@@ -48,7 +48,12 @@ const GuestsScreen = () => {
         </View>
       </View>
 
-      <Pressable onPress={() => navigation.navigate("Search Results")}
+      <Pressable onPress={() => navigation.navigate("Home",
+          {screen:"Explore", 
+            params:{
+              screen:"Search Results"
+            }}
+            )}        
         style={{ marginBottom:20, backgroundColor:"#f15454",
                 alignItems:"center", justifyContent:"center",
                 height:50, marginHorizontal:20,
