@@ -1,10 +1,9 @@
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import { View, Text, TextInput, FlatList, Pressable } from 'react-native'
 import React, {useState} from 'react'
-import Entypo from "react-native-vector-icons/Entypo"
 import styles from './styles'
 import { useNavigation } from '@react-navigation/native'
-
+import SuggestionsRow from './SuggestionsRow';
 
 import searchResults from '../../../assets/data/search'
 
@@ -16,7 +15,7 @@ const LocationSearchScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.searchBox}>
-        <View style={{height:200}}>
+        <View style={{height:800}}>
           <GooglePlacesAutocomplete placeholder='Search Properties by Location...'
             styles={styles.textInput}
             onPress={(data, details = null) => {
@@ -27,23 +26,15 @@ const LocationSearchScreen = () => {
               key: APIKEY,
               language: 'en',
             }}
+            renderRow={(item) => <SuggestionsRow item={item}/>}
           />
         </View>
-        <TextInput style={styles.textInput} 
+        {/* <TextInput style={styles.textInput} 
             placeholder="Search for Favourite Locations..."
             value={inputText}
-            onChangeText={setInputText} />        
+            onChangeText={setInputText} />         */}
       </View>
-      <FlatList data={searchResults}
-        renderItem={({item}) => (
-          <Pressable onPress={() =>navigation.navigate("Accommodation Details")}
-            style={styles.row}>
-              <View style={styles.iconContainer}>
-                  <Entypo name={"location-pin"} size={35} />
-              </View>
-              <Text style={styles.locationText}>{item.description}</Text>                            
-          </Pressable>            
-        )}/>
+      
     </View>
   )
 }
