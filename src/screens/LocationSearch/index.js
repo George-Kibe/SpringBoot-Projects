@@ -13,30 +13,25 @@ const LocationSearchScreen = () => {
   const APIKEY="AIzaSyDnMX-u2MkG1b4UcuakpWfMNK7OQmGmHa4"
 
   return (
-    <View style={styles.container}>
-      <View style={styles.searchBox}>
-        <View style={{height:800}}>
-          <GooglePlacesAutocomplete placeholder='Search Properties by Location...'
-            styles={styles.textInput}
-            onPress={(data, details = null) => {
-            // 'details' is provided when fetchDetails = true
-            console.warn(data, details);
-            }}
-            query={{
-              key: APIKEY,
-              language: 'en',
-            }}
-            renderRow={(item) => <SuggestionsRow item={item}/>}
-          />
-        </View>
-        {/* <TextInput style={styles.textInput} 
-            placeholder="Search for Favourite Locations..."
-            value={inputText}
-            onChangeText={setInputText} />         */}
-      </View>
-      
+    <View style={styles.container}>       
+      <GooglePlacesAutocomplete placeholder='Search Properties by Location...'
+        styles={styles.textInput}
+        onPress={(data, details = null) => {
+        // 'details' is provided when fetchDetails = true
+        console.warn(data, details);
+        navigation.navigate("Accommodation Details")
+        }}
+        query={{
+          key: APIKEY,
+          language: 'en',
+          // types:"(cities)", 
+        }}
+        renderRow={(item) => <SuggestionsRow item={item}/>}
+        fetchDetails
+        suppressDefaultStyles
+      />
     </View>
   )
 }
 
-export default LocationSearchScreen
+export default LocationSearchScreen;

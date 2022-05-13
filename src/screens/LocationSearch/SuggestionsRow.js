@@ -7,13 +7,12 @@ import styles from './styles'
 const SuggestionsRow = ({item}) => {
     const navigation = useNavigation()
     return (
-        <Pressable onPress={() =>navigation.navigate("Accommodation Details")}
-            style={styles.row}>
+        <View style={styles.row}>
             <View style={styles.iconContainer}>
                 <Entypo name={"location-pin"} size={35} />
             </View>
             <Text style={styles.locationText}>{item.description}</Text>                            
-        </Pressable> 
+        </View> 
     )    
 }
 
