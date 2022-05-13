@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native'
 
 import styles from './styles'
 
+
 const SuggestionsRow = ({item}) => {
     const navigation = useNavigation()
     return (
