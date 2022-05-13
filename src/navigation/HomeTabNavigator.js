@@ -1,11 +1,13 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import HomeScreen from '../screens/Home'
+import SearchResultsScreen from '../screens/SearchResults';
 
 import Fontisto from 'react-native-vector-icons/Fontisto'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import Feather from 'react-native-vector-icons/Feather'
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
+import ExploreNavigator from "./ExploreNavigator"
 
 const Tab = createBottomTabNavigator()
 
@@ -15,12 +17,12 @@ const HomeTabNavigator = () => {
         "tabBarActiveTintColor": "#f15454",
         "tabBarStyle": [{ "display": "flex" },null]
     }}>
-      <Tab.Screen name={"Explore"} component={HomeScreen}
+      <Tab.Screen name={"Explore"} component={ExploreNavigator}
         options={{
             tabBarIcon: ({color}) =>(<Fontisto name="search" size={25} color={color} />)
             }}
       />
-      <Tab.Screen name={"Saved"} component={HomeScreen}
+      <Tab.Screen name={"Saved"} component={SearchResultsScreen}
         options={{
             tabBarIcon: ({color}) =>(<FontAwesome name="heart-o" size={25} color={color} />)
             }}

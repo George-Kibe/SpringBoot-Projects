@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         borderRadius:30,
         marginHorizontal:10,
         flexDirection:'row',
-        justifyContent:'center',
+        // justifyContent:'center',
         alignItems:'center',
         position:"absolute",
         top:40,
@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     },
     searchButtonText:{
         fontSize:16,
+        marginLeft:10,
         fontWeight:'bold',
     }
 })

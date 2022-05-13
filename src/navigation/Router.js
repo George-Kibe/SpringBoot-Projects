@@ -6,6 +6,7 @@ import HomeTabNavigator from './HomeTabNavigator';
 
 import LocationSearchScreen from '../screens/LocationSearch'
 import GuestsScreen from '../screens/Guests'
+import SearchResultsScreen from '../screens/SearchResults'
 
 
 const Stack = createStackNavigator()
@@ -21,6 +22,8 @@ const Router = () => {
             options={{title:"Search by Locations"}} />
           <Stack.Screen name="Accommodation Details" component={GuestsScreen}
             options={{title:"Accommodation Details"}} />
+          <Stack.Screen name="Search Results" component={SearchResultsScreen}
+            options={{title:"Search Results"}} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider> 

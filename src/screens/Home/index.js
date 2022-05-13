@@ -12,8 +12,8 @@ const HomeScreen = () => {
       <ImageBackground source={require("../../../assets/images/wallpaper.jpg")}
                         style={styles.image}>
         <Pressable style={styles.searchButton}
-            onPress={() => navigation.navigate("Location Search")}>
-            <Fontisto name="search" size={25} color={color} />
+            onPress={() => console.warn("Search for Properties button clicked!")}>
+            <Fontisto style={{marginLeft:10}} name="search" size={25} color={color} />
             <Text style={styles.searchButtonText}>Where are you going?</Text>
         </Pressable>
 
