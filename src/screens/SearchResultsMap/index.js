@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import properties from "../../../assets/data/feed"
 import CustomMarker from '../../components/CustomMarker';
+import PropertyCarouselItem from '../../components/PropertyCarouselItem';
 
 const SearchResultsMap = () => {
     const [selectedPropertyId, setSelectedPropertyId] = useState(null)
@@ -16,11 +17,14 @@ const SearchResultsMap = () => {
         longitudeDelta: 0.8,
         }}
         provider={PROVIDER_GOOGLE}
-    >
-        {properties.map(property => (<CustomMarker property={property}
-                isSelected={property.id === selectedPropertyId} 
-                onPress={() => setSelectedPropertyId(property.id)}/>))}
-    </MapView>
+        >
+            {properties.map(property => (<CustomMarker property={property}
+                    isSelected={property.id === selectedPropertyId} 
+                    onPress={() => setSelectedPropertyId(property.id)}/>))}
+        </MapView>
+        <View style={{position:"absolute", bottom:10}}>
+            <Text>Test</Text>
+        </View>
     </View>
   )
 }
