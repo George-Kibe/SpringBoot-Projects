@@ -23,6 +23,7 @@ const LocationSearchScreen = () => {
         }}
         query={{
           key: APIKEY,
+          
           language: 'en',
           // types:"(cities)", 
         }}
