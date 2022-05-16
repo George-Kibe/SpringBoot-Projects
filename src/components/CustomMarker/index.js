@@ -1,14 +1,18 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import { Marker } from 'react-native-maps'
 
-const CustomMarker = ({property}) => {
+
+const CustomMarker = ({property, isSelected, onPress}) => {
   return (
-    <Marker coordinate={property.coordinate} key={property.id}>
-        <View style={{backgroundColor:"white",
+    <Marker coordinate={property.coordinate} key={property.id}
+            onPress={onPress}>
+        <View style={{backgroundColor: isSelected? "black" : "white",
                     padding:5, borderRadius:20,
                     borderColor:"grey",borderWidth:1}}>
-            <Text style={{fontWeight:"bold"}}>Ks.{property.totalPrice}</Text>
+            <Text style={{fontWeight:"bold",
+                          color: isSelected? "white":"black"}}
+          >Ks.{property.totalPrice}</Text>
         </View>
     </Marker>
   )
