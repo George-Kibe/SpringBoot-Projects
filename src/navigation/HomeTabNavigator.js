@@ -19,7 +19,7 @@ const HomeTabNavigator = () => {
         "tabBarActiveTintColor": "#f15454",
         "tabBarStyle": [{ "display": "flex" },null]
     }}>
-      <Tab.Screen name={"Explore"} component={ExploreNavigator}
+      <Tab.Screen name={"Explore"} component={SearchResultsMap}
         options={{
             tabBarIcon: ({color}) =>(<Fontisto name="search" size={25} color={color} />)
             }}
