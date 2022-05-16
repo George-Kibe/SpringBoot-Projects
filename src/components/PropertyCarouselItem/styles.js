@@ -3,13 +3,21 @@ import { StyleSheet, Dimensions } from "react-native";
 const styles = StyleSheet.create({
     container:{
         margin:20,
+        height:140,
+        flexDirection:"row"
 
     },
+    innerContainer:{
+        flexDirection:"row",
+        backgroundColor:"white",
+        borderRadius:10,
+        overflow:"hidden"
+    },
     image:{
-        width:'100%',
-        aspectRatio: 3 / 2,
+        height:'100%',
+        aspectRatio: 1 / 1,
         resizeMode:'cover',
-        borderRadius:20
+        borderRadius:2
     },
     bedrooms:{
         marginVertical:10,

@@ -22,8 +22,8 @@ const SearchResultsMap = () => {
                     isSelected={property.id === selectedPropertyId} 
                     onPress={() => setSelectedPropertyId(property.id)}/>))}
         </MapView>
-        <View style={{position:"absolute", bottom:10}}>
-            <Text>Test</Text>
+        <View style={{position:"absolute", bottom:-15, left:-10}}>
+            <PropertyCarouselItem property={properties[0]} />
         </View>
     </View>
   )
