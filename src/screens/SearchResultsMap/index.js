@@ -22,12 +22,12 @@ const SearchResultsMap = () => {
                     isSelected={property.id === selectedPropertyId} 
                     onPress={() => setSelectedPropertyId(property.id)}/>))}
         </MapView>
-        <View style={{position:"absolute", bottom:-15, left:-10}}>
+        <View style={{position:"absolute", bottom:55, left:0}}>
               <FlatList
                 data={properties}
                 renderItem={({item}) => <PropertyCarouselItem property={item} />}
-                //renderItem={({}) => <PropertyCarouselItem property={item}/>}
                 horizontal
+                showsHorizontalScrollIndicator={false}
               />
             
         </View>

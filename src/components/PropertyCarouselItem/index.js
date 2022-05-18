@@ -5,7 +5,6 @@ import styles from "./styles"
 
 const PropertyCarouselItem = ({property}) => {
   const { height, width } = useWindowDimensions();
-  console.warn(property)
   return (
     <View style={[styles.container, {width:width-60}]}>
       <View style={styles.innerContainer}>
