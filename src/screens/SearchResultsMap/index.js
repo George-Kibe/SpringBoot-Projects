@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, FlatList } from 'react-native'
 import React, {useState} from 'react'
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import properties from "../../../assets/data/feed"
@@ -23,7 +23,13 @@ const SearchResultsMap = () => {
                     onPress={() => setSelectedPropertyId(property.id)}/>))}
         </MapView>
         <View style={{position:"absolute", bottom:-15, left:-10}}>
-            <PropertyCarouselItem property={properties[0]} />
+              <FlatList
+                data={properties}
+                renderItem={({item}) => <PropertyCarouselItem property={item} />}
+                //renderItem={({}) => <PropertyCarouselItem property={item}/>}
+                horizontal
+              />
+            
         </View>
     </View>
   )
