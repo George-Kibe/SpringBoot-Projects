@@ -26,11 +26,11 @@ const styles = StyleSheet.create({
         color:'#5b5b5b'
     },
     description:{
-        fontSize:18,
+        fontSize:15,
         lineHeight:26,
     },
     prices:{
-        fontSize:18,
+        fontSize:15,
         marginVertical:10
     },
     oldPrice:{
