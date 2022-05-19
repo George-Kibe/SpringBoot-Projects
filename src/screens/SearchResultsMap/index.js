@@ -26,14 +26,14 @@ const SearchResultsMap = () => {
       const index = properties.findIndex(property => property.id === selectedPropertyId)
       flatList.current.scrollToIndex({index})
 
-      // const selectedProperty = properties[index];
-      // const region = {
-      //   latitude: selectedProperty.latitude,
-      //   longitude: selectedProperty.longitude,
-      //   latitudeDelta: 0.8,
-      //   longitudeDelta: 0.8,
-      // }
-      // map.current.animateToRegion(region);
+      const selectedProperty = properties[index];
+      const region = {
+        latitude: selectedProperty.coordinate.latitude,
+        longitude: selectedProperty.coordinate.longitude,
+        latitudeDelta: 0.8,
+        longitudeDelta: 0.8,
+      }
+      map.current.animateToRegion(region);
     }, [selectedPropertyId])
     
     return (
