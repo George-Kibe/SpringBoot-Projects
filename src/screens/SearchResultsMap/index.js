@@ -1,4 +1,4 @@
-import { View, FlatList } from 'react-native'
+import { View, FlatList, useWindowDimensions } from 'react-native'
 import React, {useState} from 'react'
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import properties from "../../../assets/data/feed"
@@ -7,7 +7,8 @@ import PropertyCarouselItem from '../../components/PropertyCarouselItem';
 
 const SearchResultsMap = () => {
     const [selectedPropertyId, setSelectedPropertyId] = useState(null)
-  return (
+    const { height, width } = useWindowDimensions();
+    return (
     <View style={{width:"100%", height:"100%"}}>
       <MapView style={{width:"100%", height:"100%"}}
         initialRegion={{
@@ -28,6 +29,9 @@ const SearchResultsMap = () => {
                 renderItem={({item}) => <PropertyCarouselItem property={item} />}
                 horizontal
                 showsHorizontalScrollIndicator={false}
+                snapToInterval={width-60}
+                snapToAlignment={"center"}
+                decelerationRate={"fast"}
               />
             
         </View>
