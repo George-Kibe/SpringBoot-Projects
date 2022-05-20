@@ -1,15 +1,15 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, ScrollView } from 'react-native'
 import React from 'react'
 import styles from './styles'
 
 
-const Property = ({property}) => {
+const DetailedProperty = ({property}) => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Image style={styles.image}
         source={{uri:property.image}}/>
       <Text style={styles.bedrooms}>{property.bedroom}-Bedroom {property.title}</Text>
-      <Text style={styles.description} numberOfLines={3} >
+      <Text style={styles.description}>
       {property.description}
       </Text>
       <Text style={styles.prices}>
@@ -18,8 +18,8 @@ const Property = ({property}) => {
            Per Year
       </Text>
       <Text style={styles.totalPrice}>${property.totalPrice} Total</Text>
-    </View>
+    </ScrollView>
   )
 };
 
-export default Property
+export default DetailedProperty

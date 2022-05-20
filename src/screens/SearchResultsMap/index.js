@@ -56,7 +56,7 @@ const SearchResultsMap = () => {
               <FlatList
                 ref={flatList}
                 data={properties}
-                renderItem={({item}) => <PropertyCarouselItem property={item} />}
+                renderItem={({item}) => <PropertyCarouselItem property={item} key={item.id}/>}
                 horizontal
                 showsHorizontalScrollIndicator={false}
                 snapToInterval={width-60}

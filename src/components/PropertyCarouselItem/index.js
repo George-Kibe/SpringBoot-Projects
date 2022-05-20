@@ -6,7 +6,7 @@ import styles from "./styles"
 const PropertyCarouselItem = ({property}) => {
   const { height, width } = useWindowDimensions();
   return (
-    <View style={[styles.container, {width:width-60}]}>
+    <View style={[styles.container, {width:width-60}]} key={property.id}>
       <View style={styles.innerContainer}>
         <Image style={styles.image}
           source={{uri:property.image}}/>

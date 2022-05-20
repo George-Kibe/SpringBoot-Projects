@@ -9,6 +9,7 @@ import Feather from 'react-native-vector-icons/Feather'
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
 import ExploreNavigator from "./ExploreNavigator"
 import SearchResultsMap from "../screens/SearchResultsMap";
+import PropertyScreen from "../screens/PropertyScreen";
 
 const Tab = createBottomTabNavigator()
 
@@ -19,7 +20,7 @@ const HomeTabNavigator = () => {
         "tabBarActiveTintColor": "#f15454",
         "tabBarStyle": [{ "display": "flex" },null]
     }}>
-      <Tab.Screen name={"Explore"} component={SearchResultsMap}
+      <Tab.Screen name={"Explore"} component={ExploreNavigator}
         options={{
             tabBarIcon: ({color}) =>(<Fontisto name="search" size={25} color={color} />)
             }}
@@ -29,7 +30,7 @@ const HomeTabNavigator = () => {
             tabBarIcon: ({color}) =>(<FontAwesome name="heart" size={25} color={color} />)
             }}
       />
-      <Tab.Screen name={"Buenas"} component={HomeScreen}
+      <Tab.Screen name={"Buenas"} component={SearchResultsMap}
         options={{
             tabBarIcon: ({color}) =>(<FontAwesome5 name="building" size={25} color={color} />)
             }}
@@ -39,7 +40,7 @@ const HomeTabNavigator = () => {
             tabBarIcon: ({color}) =>(<Feather name="message-square" size={25} color={color} />)
             }}
       />
-      <Tab.Screen name={"Profile"} component={HomeScreen}
+      <Tab.Screen name={"Profile"} component={PropertyScreen}
         options={{
             tabBarIcon: ({color}) =>(<EvilIcons name="user" size={25} color={color} />)
             }}
