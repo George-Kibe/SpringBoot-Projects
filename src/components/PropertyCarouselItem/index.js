@@ -1,12 +1,17 @@
-import { View, Text, Image, useWindowDimensions } from 'react-native'
+import { View, Text, Image, useWindowDimensions, Pressable } from 'react-native'
 import React from 'react'
 import styles from "./styles"
-
+import { useNavigation } from '@react-navigation/native';
 
 const PropertyCarouselItem = ({property}) => {
+  const navigation = useNavigation()
+  const goToProperty = () =>{
+    navigation.navigate("Detailed Property", {propertyId:property.id});
+  }
+
   const { height, width } = useWindowDimensions();
   return (
-    <View style={[styles.container, {width:width-60}]} key={property.id}>
+    <Pressable onPress={goToProperty} style={[styles.container, {width:width-60}]} key={property.id}>
       <View style={styles.innerContainer}>
         <Image style={styles.image}
           source={{uri:property.image}}/>
@@ -21,7 +26,7 @@ const PropertyCarouselItem = ({property}) => {
           </Text>
         </View>
       </View>
-    </View>
+    </Pressable>
   )
 };
 
