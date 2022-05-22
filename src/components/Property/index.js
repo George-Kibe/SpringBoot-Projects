@@ -4,7 +4,6 @@ import styles from './styles'
 import { useNavigation } from '@react-navigation/native';
 
 const Property = ({property}) => {
-  console.warn(property.id)
   const navigation = useNavigation()
   const goToProperty = () =>{
     navigation.navigate("Detailed Property", {propertyId:property.id});

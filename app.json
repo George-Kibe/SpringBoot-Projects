@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "airbnb_clone",
-    "slug": "airbnb_clone",
+    "name": "Buenas_app",
+    "slug": "buenas_app",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "description": "Real Estate Application"
   }
 }

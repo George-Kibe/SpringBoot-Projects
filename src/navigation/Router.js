@@ -8,6 +8,7 @@ import LocationSearchScreen from '../screens/LocationSearch'
 import GuestsScreen from '../screens/Guests'
 import SearchResultsScreen from '../screens/SearchResults'
 import DetailedProperty from '../components/DetailedProperty';
+import PropertyScreen from '../screens/PropertyScreen';
 
 const Stack = createStackNavigator()
 
@@ -24,7 +25,7 @@ const Router = () => {
             options={{title:"Accommodation Details"}} />
           <Stack.Screen name="Search Results" component={SearchResultsScreen}
             options={{title:"Search Results"}} />
-          <Stack.Screen name="Detailed Property" component={DetailedProperty}
+          <Stack.Screen name="Detailed Property" component={PropertyScreen}
             options={{title:"Detailed Property"}} />
         </Stack.Navigator>
       </NavigationContainer>
