@@ -48,7 +48,7 @@ const SearchResultsMap = () => {
         ref={map}
         provider={PROVIDER_GOOGLE}
         >
-            {properties.map(property => (<CustomMarker property={property}
+            {properties.map(property => (<CustomMarker property={property} key={property.id}
                     isSelected={property.id === selectedPropertyId} 
                     onPress={() => setSelectedPropertyId(property.id)}/>))}
         </MapView>
