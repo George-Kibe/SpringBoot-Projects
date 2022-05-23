@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-buenasrealestate-dev-222311-authRole",
+      "UnauthRoleArn": "arn:aws:iam::179792149144:role/amplify-buenasrealestate-dev-222311-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::179792149144:role/amplify-buenasrealestate-dev-222311-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-buenasrealestate-dev-222311-deployment",
+      "UnauthRoleName": "amplify-buenasrealestate-dev-222311-unauthRole",
+      "StackName": "amplify-buenasrealestate-dev-222311",
+      "StackId": "arn:aws:cloudformation:eu-west-1:179792149144:stack/amplify-buenasrealestate-dev-222311/cd87c260-dacd-11ec-bdc5-0ad428833673",
+      "AmplifyAppId": "d39br42n1sxg67"
+    }
+  }
+}
