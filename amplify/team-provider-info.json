@@ -10,6 +10,11 @@
       "StackName": "amplify-buenasrealestate-dev-222311",
       "StackId": "arn:aws:cloudformation:eu-west-1:179792149144:stack/amplify-buenasrealestate-dev-222311/cd87c260-dacd-11ec-bdc5-0ad428833673",
       "AmplifyAppId": "d39br42n1sxg67"
+    },
+    "categories": {
+      "auth": {
+        "buenasrealestatedd9e7d2a": {}
+      }
     }
   }
 }
