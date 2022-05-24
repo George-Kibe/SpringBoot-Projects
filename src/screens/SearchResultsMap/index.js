@@ -3,11 +3,14 @@ import React, {useState, useEffect, useRef} from 'react'
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import CustomMarker from '../../components/CustomMarker';
 import PropertyCarouselItem from '../../components/PropertyCarouselItem';
+import {API, graphqlOperation} from "aws-amplify"
+import {listProperties} from "../../graphql/queries"
 //import GetLocation from 'react-native-get-location'
 
 
 const SearchResultsMap = ({properties}) => {
     const [selectedPropertyId, setSelectedPropertyId] = useState(null)
+    const [manyProperties, setManyProperties] = useState([])
     const { height, width } = useWindowDimensions();
     const flatList = useRef()
     const map = useRef()
@@ -21,14 +24,29 @@ const SearchResultsMap = ({properties}) => {
       }
     })    
 
+    useEffect(() => {  
+      const fetchProperties = async () =>{
+        try{
+          const propertiesResults = await API.graphql(
+            graphqlOperation(listProperties)
+          )
+          setManyProperties(propertiesResults.data.listProperties.items)
+        }catch (error){
+          console.log(error)
+        }
+      }
+      fetchProperties();
+    }, [])
+
     useEffect(() => {
       if(!selectedPropertyId || !flatList){
         return
       }
-      const index = properties.findIndex(property => property.id === selectedPropertyId)
+      const index = properties ? properties.findIndex(property => property.id === selectedPropertyId)
+                    : manyProperties.findIndex(property => property.id === selectedPropertyId)
       flatList.current.scrollToIndex({index})
 
-      const selectedProperty = properties[index];
+      const selectedProperty = properties? properties[index] : manyProperties[index];
       const region = {
         latitude: selectedProperty.latitude,
         longitude: selectedProperty.longitude,
@@ -50,14 +68,22 @@ const SearchResultsMap = ({properties}) => {
         ref={map}
         provider={PROVIDER_GOOGLE}
         >
-            {properties.map(property => (<CustomMarker property={property} key={property.id}
-                    isSelected={property.id === selectedPropertyId} 
-                    onPress={() => setSelectedPropertyId(property.id)}/>))}
+          {
+            properties?
+            properties.map(property => (<CustomMarker property={property} key={property.id}
+              isSelected={property.id === selectedPropertyId} 
+              onPress={() => setSelectedPropertyId(property.id)}/>))
+            :
+            manyProperties.map(property => (<CustomMarker property={property} key={property.id}
+              isSelected={property.id === selectedPropertyId} 
+              onPress={() => setSelectedPropertyId(property.id)}/>))
+          }
+            
         </MapView>
         <View style={{position:"absolute", bottom:55, left:0}}>
               <FlatList
                 ref={flatList}
-                data={properties}
+                data={properties ? properties : manyProperties }
                 renderItem={({item}) => <PropertyCarouselItem property={item} key={item.id}/>}
                 horizontal
                 showsHorizontalScrollIndicator={false}
