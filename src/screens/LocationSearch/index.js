@@ -18,8 +18,9 @@ const LocationSearchScreen = () => {
         styles={styles.textInput}
         onPress={(data, details = null) => {
         // 'details' is provided when fetchDetails = true
-        console.warn(data, details);
-        navigation.navigate("Accommodation Details")
+        //console.warn(data, details);
+        //console.log(details.geometry.viewport) Northeast and Southwest coordinates
+        navigation.navigate("Accommodation Details", {viewport:details.geometry.viewport} )
         }}
         query={{
           key: APIKEY,

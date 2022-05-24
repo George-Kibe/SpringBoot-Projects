@@ -3,16 +3,15 @@ import React, {useState, useEffect, useRef} from 'react'
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import CustomMarker from '../../components/CustomMarker';
 import PropertyCarouselItem from '../../components/PropertyCarouselItem';
-import {API, graphqlOperation} from "aws-amplify"
-import {listProperties} from "../../graphql/queries"
+//import GetLocation from 'react-native-get-location'
 
 
-const SearchResultsMap = () => {
+const SearchResultsMap = ({properties}) => {
     const [selectedPropertyId, setSelectedPropertyId] = useState(null)
-    const [properties, setProperties] = useState([])
     const { height, width } = useWindowDimensions();
     const flatList = useRef()
     const map = useRef()
+    
 
     const viewConfig = useRef({itemVisiblePercentThreshold: 70})
     const onViewChanged = useRef(({viewableItems}) => {
@@ -21,20 +20,6 @@ const SearchResultsMap = () => {
         setSelectedPropertyId(selectedProperty.id)
       }
     })    
-
-    useEffect(() => {  
-      const fetchProperties = async () =>{
-        try{
-          const propertiesResults = await API.graphql(
-            graphqlOperation(listProperties)
-          )
-          setProperties(propertiesResults.data.listProperties.items)
-        }catch (error){
-          console.log(error)
-        }
-      }
-      fetchProperties();
-    }, [])
 
     useEffect(() => {
       if(!selectedPropertyId || !flatList){

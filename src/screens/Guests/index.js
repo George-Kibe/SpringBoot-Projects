@@ -1,12 +1,15 @@
 import { View, Text, Pressable } from 'react-native'
 import React, {useState} from 'react'
 import styles from './styles'
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
+
+
 
 const GuestsScreen = () => {
   const [adults, setAdults] = useState(0)
   const [children, setChildren] = useState(0)
   const navigation = useNavigation()
+  const route = useRoute()
 
   return (
     <View style={{justifyContent:"space-between", height:"100%"}}>
@@ -51,7 +54,11 @@ const GuestsScreen = () => {
       <Pressable onPress={() => navigation.navigate("Home",
           {screen:"Explore", 
             params:{
-              screen:"Search Results"
+              screen:"Search Results",
+              params:{
+                users:adults + children,
+                viewport:route.params.viewport,
+              }
             }}
             )}        
         style={{ marginBottom:20, backgroundColor:"#f15454",
