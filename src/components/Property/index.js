@@ -4,6 +4,7 @@ import styles from './styles'
 import { useNavigation } from '@react-navigation/native';
 
 const Property = ({property}) => {
+  const days = Math.floor(Math.random()*100)
   const navigation = useNavigation()
   const goToProperty = () =>{
     navigation.navigate("Detailed Property", {propertyId:property.id});
@@ -22,7 +23,7 @@ const Property = ({property}) => {
           <Text style={styles.newPrice}> ${property.newPrice} </Text>
            Per Year
       </Text>
-      <Text style={styles.totalPrice}>${property.totalPrice} Total</Text>
+      <Text style={styles.totalPrice}>${property.newPrice*days} Total</Text>
     </Pressable>
   )
 };

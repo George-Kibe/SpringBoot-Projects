@@ -1,12 +1,15 @@
 import { View, FlatList, useWindowDimensions } from 'react-native'
 import React, {useState, useEffect, useRef} from 'react'
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
-import properties from "../../../assets/data/feed"
 import CustomMarker from '../../components/CustomMarker';
 import PropertyCarouselItem from '../../components/PropertyCarouselItem';
+import {API, graphqlOperation} from "aws-amplify"
+import {listProperties} from "../../graphql/queries"
+
 
 const SearchResultsMap = () => {
     const [selectedPropertyId, setSelectedPropertyId] = useState(null)
+    const [properties, setProperties] = useState([])
     const { height, width } = useWindowDimensions();
     const flatList = useRef()
     const map = useRef()
@@ -17,7 +20,21 @@ const SearchResultsMap = () => {
         const selectedProperty = viewableItems[0].item;
         setSelectedPropertyId(selectedProperty.id)
       }
-    })
+    })    
+
+    useEffect(() => {  
+      const fetchProperties = async () =>{
+        try{
+          const propertiesResults = await API.graphql(
+            graphqlOperation(listProperties)
+          )
+          setProperties(propertiesResults.data.listProperties.items)
+        }catch (error){
+          console.log(error)
+        }
+      }
+      fetchProperties();
+    }, [])
 
     useEffect(() => {
       if(!selectedPropertyId || !flatList){
@@ -28,8 +45,8 @@ const SearchResultsMap = () => {
 
       const selectedProperty = properties[index];
       const region = {
-        latitude: selectedProperty.coordinate.latitude,
-        longitude: selectedProperty.coordinate.longitude,
+        latitude: selectedProperty.latitude,
+        longitude: selectedProperty.longitude,
         latitudeDelta: 0.8,
         longitudeDelta: 0.8,
       }
