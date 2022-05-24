@@ -79,3 +79,6 @@ amplifytools.xcconfig
 amplify init
 npm install aws-amplify aws-amplify-react-native @react-native-community/netinfo @react-native-async-storage/async-storage @react-native-picker/picker
 #for installing amplify dependancies
+amplify add api
+amplify add auth
+amplify console api
