@@ -1,4 +1,4 @@
-package com.chat;
+package com.realhive.app;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

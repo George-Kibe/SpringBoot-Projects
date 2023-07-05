@@ -1,4 +1,4 @@
-package com.chat;
+package com.realhive.app;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
