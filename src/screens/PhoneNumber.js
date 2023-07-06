@@ -16,7 +16,8 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {images, COLORS, SIZES, FONTS} from '../constants';
 import Button from '../components/Button';
 import PageTitle from '../components/PageTitle';
-
+import Fontisto from 'react-native-vector-icons/Fontisto';
+import Entypo from 'react-native-vector-icons/Entypo';
 export default function PhoneNumber({navigation}) {
   const [areas, setAreas] = useState([]);
   const [selectedArea, setSelectedArea] = useState(null);
@@ -112,7 +113,7 @@ export default function PhoneNumber({navigation}) {
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
       <PageTitle onPress={() => navigation.navigate('Walkthrough')} />
       <ScrollView>
-        <View style={{flex: 1, alignItems: 'center'}}>
+        <View style={{flex: 1, alignItems: 'center', padding: 22}}>
           <Text
             style={{
               ...FONTS.h2,
@@ -125,21 +126,27 @@ export default function PhoneNumber({navigation}) {
             style={{
               ...FONTS.body3,
               textAlign: 'center',
-              marginVertical: 4,
+              marginVertical: 10,
             }}>
             Please confirm your country code and enter your phone number
           </Text>
           <View
             style={{
               width: '100%',
-              paddingHorizontal: 22,
-              paddingVertical: 60,
+              marginHorizontal: '10%',
+              borderWidth: 2,
+              borderColor: '#D3D3D3',
+              borderRadius: 20,
+              paddingHorizontal: 5,
+              paddingVertical: 10,
+              position: 'relative',
+              display: 'flex',
+              flexDirection: 'column',
             }}>
             <View
               style={{
                 flexDirection: 'row',
                 alignItems: 'center',
-                marginBottom: 88,
               }}>
               <TouchableOpacity
                 style={{
@@ -209,13 +216,62 @@ export default function PhoneNumber({navigation}) {
                 keyboardType="numeric"
               />
             </View>
+            <View
+              style={{
+                flex: 1,
+                marginVertical: 10,
+                borderColor: '#111',
+                flexDirection: 'row',
+                alignItems: 'center',
+                backgroundColor: COLORS.secondaryWhite,
+                borderRadius: SIZES.padding,
+                paddingLeft: SIZES.padding,
+                height: 48,
+                gap: 2,
+                fontSize: 12,
+                color: '#111',
+              }}>
+              <Fontisto name="email" size={25} color={COLORS.primary} />
+              <TextInput
+                placeholder="Email"
+                placeholderTextColor="#111"
+                selectionColor="#111"
+                keyboardType="default"
+              />
+            </View>
+            <View
+              style={{
+                flex: 1,
+                marginVertical: 10,
+                borderColor: '#111',
+                flexDirection: 'row',
+                alignItems: 'center',
+                backgroundColor: COLORS.secondaryWhite,
+                borderRadius: SIZES.padding,
+                paddingLeft: SIZES.padding,
+                height: 48,
+                gap: 2,
+                fontSize: 12,
+                color: '#111',
+              }}>
+              <Entypo name="lock" size={25} color={COLORS.primary} />
+              <TextInput
+                secureTextEntry
+                placeholder="password"
+                placeholderTextColor="#111"
+                selectionColor="#111"
+                keyboardType="default"
+              />
+            </View>
             <Button
-              title="Submit"
+              title="Login"
               onPress={() => navigation.navigate('Verification')}
               style={{
-                width: '100%',
+                alignSelf: 'center',
+                width: '60%',
                 paddingVertical: 12,
                 marginBottom: 48,
+
               }}
             />
           </View>
