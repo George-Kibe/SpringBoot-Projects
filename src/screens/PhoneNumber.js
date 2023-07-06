@@ -10,6 +10,7 @@ import {
   View,
   Text,
   Image,
+  ActivityIndicator,
 } from 'react-native';
 import {TouchableOpacity} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -18,6 +19,7 @@ import Button from '../components/Button';
 import PageTitle from '../components/PageTitle';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Entypo from 'react-native-vector-icons/Entypo';
+
 export default function PhoneNumber({navigation}) {
   const [areas, setAreas] = useState([]);
   const [selectedArea, setSelectedArea] = useState(null);
@@ -50,6 +52,9 @@ export default function PhoneNumber({navigation}) {
       });
   }, []);
 
+  if (areas.length < 1) {
+    return <ActivityIndicator />;
+  }
   // render countries codes modal
   function renderAreasCodesModal() {
     const renderItem = ({item}) => {
@@ -63,14 +68,13 @@ export default function PhoneNumber({navigation}) {
             setSelectedArea(item), setModalVisible(false);
           }}>
           <Image
-            source={{uri: item.flag}}
+            source={{uri: item?.flag}}
             style={{
               height: 30,
               width: 30,
               marginRight: 10,
             }}
           />
-
           <Text style={{...FONTS.body3, color: COLORS.white}}>{item.item}</Text>
         </TouchableOpacity>
       );
@@ -142,6 +146,7 @@ export default function PhoneNumber({navigation}) {
               position: 'relative',
               display: 'flex',
               flexDirection: 'column',
+              gap: 10,
             }}>
             <View
               style={{
@@ -163,7 +168,7 @@ export default function PhoneNumber({navigation}) {
                 onPress={() => setModalVisible(true)}>
                 <View style={{justifyContent: 'center'}}>
                   <Image
-                    source={images.down}
+                    source={images?.down}
                     style={{
                       width: 10,
                       height: 10,
@@ -177,14 +182,16 @@ export default function PhoneNumber({navigation}) {
                     justifyContent: 'center',
                     marginLeft: 5,
                   }}>
-                  <Image
-                    source={{uri: selectedArea?.flag}}
-                    resizeMode="contain"
-                    style={{
-                      width: 30,
-                      height: 30,
-                    }}
-                  />
+                  {selectedArea && (
+                    <Image
+                      source={{uri: selectedArea?.flag}}
+                      resizeMode="contain"
+                      style={{
+                        width: 30,
+                        height: 30,
+                      }}
+                    />
+                  )}
                 </View>
 
                 <View
@@ -264,14 +271,13 @@ export default function PhoneNumber({navigation}) {
               />
             </View>
             <Button
-              title="Login"
+              title="Login Now"
               onPress={() => navigation.navigate('Verification')}
               style={{
                 alignSelf: 'center',
                 width: '60%',
                 paddingVertical: 12,
                 marginBottom: 48,
-
               }}
             />
           </View>
