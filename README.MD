@@ -16,7 +16,7 @@ A dockerfile is a file that contains instructions to build a docker image
 ## Useful docker commands
 - Pull Image ```docker pull <image>```
 - Push Image ```docker push <username/image>```
-- Run a docker container from image. i for interactive mode. d for detach mode which allows running other commands in terminal. p allows port mapping.```docker run -it -d -p host-port>:<container>```
+- Run a docker container from image. i for interactive mode. d for detach mode which allows running other commands in terminal. p allows port mapping.```docker run -it -d -p <host-port>:<container-port> <container-name>```
 - Stop container ```docker stop <container>```
 - Start a container ```docker start <container> ```
 - Delete a stopped container ```docker rm <container-id/container-name>```
@@ -28,3 +28,18 @@ A dockerfile is a file that contains instructions to build a docker image
 - Build a docker imager ```docker build -t <username/image>```
 - Get logs of a runing container ```docker logs <container-name/container-id>```
 - Get information of a particular container ```docker inspect <container-name/container-id>```
+  
+## Working with docker, Java and Postgresql
+A summary of commands to use in setting up docker running java spring boot application to run with postgres database
+- Installing Postgres Image and setting password to use. -e allows to set environmental variables. ```docker run -d --name db -e POSTGRES_PASSWORD=password postgres```
+- Adding PgAdmin ```docker run -d --name pgadmin -e PGADMIN_DEFAULT_EMAIL=admin@admin.com -e PGADMIN_DEFAULT_PASSWORD=password dpage/pgadmin4```
+- Exec allows to execute commands in a docker container. it allows use of an interactive console.
+  Ping is used to check reachability/connectivity of a network. ```docker exec -it pgadmin ping db```
+- ```docker rm -f db pgadmin```
+Using Networks
+- Create a network ```docker network create my-network```
+- Rerunning the postgres docker image associating it to created network.
+  ```docker run -d --name db --network my-network -e POSTGRES_PASSWORD=password postgres```
+- Rerunning the pgadmin docker image associating it to created network.
+  ```docker run -d --name pgadmin --network my-network -e PGADMIN_DEFAULT_EMAIL=admin@admin.com -e PGADMIN_DEFAULT_PASSWORD=password dpage/pgadmin4```
+- Rerun the ping command to check connectivity. ```docker exec -it pgadmin ping db```
