@@ -18,7 +18,7 @@ public class JobServiceImplementation implements JobService{
         this.jobRepository = jobRepository;
     }
 
-    private Long nextId = 1L;
+    // private Long nextId = 1L;
     @Override
     public List<Job> findAllJobs() {
         return jobRepository.findAll();
@@ -26,7 +26,7 @@ public class JobServiceImplementation implements JobService{
 
     @Override
     public void createJob(Job job) {
-        job.setId(nextId ++);
+        // job.setId(nextId ++);
         jobRepository.save(job);
     }
 
