@@ -1,5 +1,5 @@
 package com.kibe.serviceRegistry;
-
+// continue from 55:25
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;

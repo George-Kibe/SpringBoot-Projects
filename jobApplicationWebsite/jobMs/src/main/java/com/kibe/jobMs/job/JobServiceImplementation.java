@@ -1,6 +1,7 @@
 package com.kibe.jobMs.job;
 import com.kibe.jobMs.dto.JobWithCompanyDTO;
 import com.kibe.jobMs.external.Company;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -14,17 +15,19 @@ import java.util.stream.Collectors;
 public class JobServiceImplementation implements JobService{
     // private List<Job> jobs = new ArrayList<>();
     JobRepository jobRepository;
+    RestTemplate restTemplate;
 
-    public JobServiceImplementation(JobRepository jobRepository) {
+    public JobServiceImplementation(JobRepository jobRepository, RestTemplate restTemplate) {
         this.jobRepository = jobRepository;
+        this.restTemplate = restTemplate;
     }
 
     // private Long nextId = 1L;
     private JobWithCompanyDTO convertToDTO(Job job){
         JobWithCompanyDTO jobWithCompanyDTO = new JobWithCompanyDTO();
         jobWithCompanyDTO.setJob(job);
-        RestTemplate restTemplate = new RestTemplate();
-        Company company = restTemplate.getForObject("http://localhost:8083/companies/1", Company.class);
+        // RestTemplate restTemplate = new RestTemplate();
+        Company company = restTemplate.getForObject("http://COMPANYMS:8083/companies/" + job.getCompanyId(), Company.class);
         jobWithCompanyDTO.setCompany(company);
         return jobWithCompanyDTO;
     }
