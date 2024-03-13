@@ -1,4 +1,5 @@
 package com.kibe.jobMs.job;
+import com.kibe.jobMs.dto.JobWithCompanyDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,7 @@ public class JobController {
         return ResponseEntity.ok("Server health Check: Server is running fine!");
     }
     @GetMapping("/jobs")
-    public ResponseEntity<List<Job>> findAllJobs(){
+    public ResponseEntity<List<JobWithCompanyDTO>> findAllJobs(){
         return ResponseEntity.ok(jobService.findAllJobs());
     }
     @GetMapping("/jobs/{id}")

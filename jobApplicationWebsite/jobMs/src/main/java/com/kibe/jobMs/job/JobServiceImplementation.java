@@ -1,10 +1,14 @@
 package com.kibe.jobMs.job;
+import com.kibe.jobMs.dto.JobWithCompanyDTO;
+import com.kibe.jobMs.external.Company;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class JobServiceImplementation implements JobService{
@@ -16,9 +20,24 @@ public class JobServiceImplementation implements JobService{
     }
 
     // private Long nextId = 1L;
+    private JobWithCompanyDTO convertToDTO(Job job){
+        JobWithCompanyDTO jobWithCompanyDTO = new JobWithCompanyDTO();
+        jobWithCompanyDTO.setJob(job);
+        RestTemplate restTemplate = new RestTemplate();
+        Company company = restTemplate.getForObject("http://localhost:8083/companies/1", Company.class);
+        jobWithCompanyDTO.setCompany(company);
+        return jobWithCompanyDTO;
+    }
     @Override
-    public List<Job> findAllJobs() {
-        return jobRepository.findAll();
+    public List<JobWithCompanyDTO> findAllJobs() {
+        List<Job> jobs = jobRepository.findAll();
+        List<JobWithCompanyDTO> jobWithCompanyDTOs = new ArrayList<>();
+        for (Job job: jobs){
+            JobWithCompanyDTO jobWithCompanyDTO = convertToDTO(job);
+            jobWithCompanyDTOs.add(jobWithCompanyDTO);
+        }
+        //return jobWithCompanyDTOs;
+        return jobs.stream().map(this::convertToDTO).collect(Collectors.toList());
     }
 
     @Override
@@ -39,15 +58,6 @@ public class JobServiceImplementation implements JobService{
 
     @Override
     public boolean deleteJobById(Long id) {
-//        Iterator<Job> iterator = jobs.iterator();
-//        while (iterator.hasNext()){
-//            Job job = iterator.next();
-//            if(job.getId().equals(id)){
-//                // jobs.remove(job);
-//                iterator.remove();
-//                return true;
-//            }
-//        }
         try{
             jobRepository.deleteById(id);
             return true;
