@@ -1,12 +1,10 @@
 package com.kibe.jobMs.job;
 import com.kibe.jobMs.dto.JobWithCompanyDTO;
 import com.kibe.jobMs.external.Company;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -55,8 +53,13 @@ public class JobServiceImplementation implements JobService{
     }
 
     @Override
-    public Job getJobById(Long id) {
-        return jobRepository.findById(id).orElse(null);
+    public JobWithCompanyDTO getJobById(Long id) {
+
+        Job job  = jobRepository.findById(id).orElse(null);
+        if(job != null){
+            return  convertToDTO(job);
+        }
+        return null;
     }
 
     @Override
