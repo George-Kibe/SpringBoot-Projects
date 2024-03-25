@@ -1,6 +1,7 @@
 package com.kibe.jobMs.job;
 import com.kibe.jobMs.dto.JobWithCompanyDTO;
 import com.kibe.jobMs.external.Company;
+import com.kibe.jobMs.job.mapper.JobMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -22,11 +23,13 @@ public class JobServiceImplementation implements JobService{
 
     // private Long nextId = 1L;
     private JobWithCompanyDTO convertToDTO(Job job){
-        JobWithCompanyDTO jobWithCompanyDTO = new JobWithCompanyDTO();
-        jobWithCompanyDTO.setJob(job);
+        // JobWithCompanyDTO jobWithCompanyDTO = new JobWithCompanyDTO();
         // RestTemplate restTemplate = new RestTemplate();
         Company company = restTemplate.getForObject("http://COMPANYMS:8083/companies/" + job.getCompanyId(), Company.class);
-        jobWithCompanyDTO.setCompany(company);
+        JobWithCompanyDTO jobWithCompanyDTO = JobMapper.mapToJobWithCompanyDTO(
+                job, company
+        );
+        // jobWithCompanyDTO.setCompany(company);
         return jobWithCompanyDTO;
     }
     @Override
