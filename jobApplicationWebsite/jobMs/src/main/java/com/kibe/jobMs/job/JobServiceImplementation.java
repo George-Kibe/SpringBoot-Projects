@@ -1,7 +1,13 @@
 package com.kibe.jobMs.job;
-import com.kibe.jobMs.dto.JobWithCompanyDTO;
+import com.kibe.jobMs.dto.JobDTO;
 import com.kibe.jobMs.external.Company;
+import com.kibe.jobMs.external.Review;
+import com.kibe.jobMs.job.clients.CompanyClient;
+import com.kibe.jobMs.job.clients.ReviewClient;
 import com.kibe.jobMs.job.mapper.JobMapper;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,30 +21,44 @@ public class JobServiceImplementation implements JobService{
     // private List<Job> jobs = new ArrayList<>();
     JobRepository jobRepository;
     RestTemplate restTemplate;
+    CompanyClient companyClient;
+    ReviewClient reviewClient;
 
-    public JobServiceImplementation(JobRepository jobRepository, RestTemplate restTemplate) {
+    public JobServiceImplementation(JobRepository jobRepository, RestTemplate restTemplate, CompanyClient companyClient, ReviewClient reviewClient) {
         this.jobRepository = jobRepository;
         this.restTemplate = restTemplate;
+        this.companyClient = companyClient;
+        this.reviewClient = reviewClient;
     }
 
     // private Long nextId = 1L;
-    private JobWithCompanyDTO convertToDTO(Job job){
-        // JobWithCompanyDTO jobWithCompanyDTO = new JobWithCompanyDTO();
-        // RestTemplate restTemplate = new RestTemplate();
-        Company company = restTemplate.getForObject("http://COMPANYMS:8083/companies/" + job.getCompanyId(), Company.class);
-        JobWithCompanyDTO jobWithCompanyDTO = JobMapper.mapToJobWithCompanyDTO(
-                job, company
+    private JobDTO convertToDTO(Job job){
+        // rest template style
+        // Company company = restTemplate.getForObject("http://COMPANYMS:8083/companies/" + job.getCompanyId(), Company.class);
+
+        ResponseEntity<List<Review>> reviewResponse = restTemplate.exchange(
+                "http://REVIEWMS:8084/reviews?companyId=" + job.getCompanyId(),
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<List<Review>>() {
+                });
+
+        List<Review> reviewsRest = reviewResponse.getBody();
+        // using openfeign
+        Company company = companyClient.getCompany(job.getCompanyId());
+        List<Review> reviews = reviewClient.getReviews(job.getCompanyId());
+
+        return JobMapper.mapToJobWithCompanyDTO(
+                job, company, reviews
         );
-        // jobWithCompanyDTO.setCompany(company);
-        return jobWithCompanyDTO;
     }
     @Override
-    public List<JobWithCompanyDTO> findAllJobs() {
+    public List<JobDTO> findAllJobs() {
         List<Job> jobs = jobRepository.findAll();
-        List<JobWithCompanyDTO> jobWithCompanyDTOs = new ArrayList<>();
+        List<JobDTO> jobDTOs = new ArrayList<>();
         for (Job job: jobs){
-            JobWithCompanyDTO jobWithCompanyDTO = convertToDTO(job);
-            jobWithCompanyDTOs.add(jobWithCompanyDTO);
+            JobDTO jobDTO = convertToDTO(job);
+            jobDTOs.add(jobDTO);
         }
         //return jobWithCompanyDTOs;
         return jobs.stream().map(this::convertToDTO).collect(Collectors.toList());
@@ -56,7 +76,7 @@ public class JobServiceImplementation implements JobService{
     }
 
     @Override
-    public JobWithCompanyDTO getJobById(Long id) {
+    public JobDTO getJobById(Long id) {
 
         Job job  = jobRepository.findById(id).orElse(null);
         if(job != null){

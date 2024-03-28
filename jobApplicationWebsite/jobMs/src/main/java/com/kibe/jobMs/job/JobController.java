@@ -1,10 +1,9 @@
 package com.kibe.jobMs.job;
-import com.kibe.jobMs.dto.JobWithCompanyDTO;
+import com.kibe.jobMs.dto.JobDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -20,12 +19,12 @@ public class JobController {
         return ResponseEntity.ok("Server health Check: Server is running fine!");
     }
     @GetMapping("/jobs")
-    public ResponseEntity<List<JobWithCompanyDTO>> findAllJobs(){
+    public ResponseEntity<List<JobDTO>> findAllJobs(){
         return ResponseEntity.ok(jobService.findAllJobs());
     }
     @GetMapping("/jobs/{id}")
-    public ResponseEntity<JobWithCompanyDTO> findJobById(@PathVariable Long id){
-        JobWithCompanyDTO jobWithCompanyDTO = jobService.getJobById(id);
+    public ResponseEntity<JobDTO> findJobById(@PathVariable Long id){
+        JobDTO jobWithCompanyDTO = jobService.getJobById(id);
         if (jobWithCompanyDTO != null){
             return new ResponseEntity<>(jobWithCompanyDTO, HttpStatus.OK);
         }

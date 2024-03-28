@@ -1,12 +1,12 @@
 package com.kibe.jobMs.job;
-import com.kibe.jobMs.dto.JobWithCompanyDTO;
+import com.kibe.jobMs.dto.JobDTO;
 
 import java.util.List;
 
 public interface JobService {
-    List<JobWithCompanyDTO> findAllJobs();
+    List<JobDTO> findAllJobs();
     boolean createJob(Job job);
-    JobWithCompanyDTO getJobById(Long id);
+    JobDTO getJobById(Long id);
 
     boolean deleteJobById(Long id);
 
