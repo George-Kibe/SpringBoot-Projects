@@ -1,6 +1,7 @@
 package com.kibe.jobMs.dto;
 
 import com.kibe.jobMs.external.Company;
+import com.kibe.jobMs.external.Review;
 import com.kibe.jobMs.job.Job;
 
 public class JobWithCompanyDTO {
@@ -11,6 +12,7 @@ public class JobWithCompanyDTO {
     private String maxSalary;
     private String location;
     private Company company;
+    private Review review;
 
     public Long getId() {
         return id;
@@ -66,5 +68,13 @@ public class JobWithCompanyDTO {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    public Review getReview() {
+        return review;
+    }
+
+    public void setReview(Review review) {
+        this.review = review;
     }
 }
