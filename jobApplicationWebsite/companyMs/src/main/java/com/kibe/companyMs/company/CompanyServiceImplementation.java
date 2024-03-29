@@ -1,4 +1,6 @@
 package com.kibe.companyMs.company;
+import com.kibe.companyMs.clients.ReviewClient;
+import com.kibe.companyMs.dto.ReviewMessage;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -7,9 +9,10 @@ import java.util.Optional;
 @Service
 public class CompanyServiceImplementation implements CompanyService{
     CompanyRepository companyRepository;
-
-    public CompanyServiceImplementation(CompanyRepository companyRepository) {
+    ReviewClient reviewClient;
+    public CompanyServiceImplementation(CompanyRepository companyRepository, ReviewClient reviewClient) {
         this.companyRepository = companyRepository;
+        this.reviewClient = reviewClient;
     }
 
     @Override
@@ -55,6 +58,20 @@ public class CompanyServiceImplementation implements CompanyService{
         }
         // System.out.println("Encountered Exception: " + e);
         return false;
+    }
+
+    @Override
+    public void updateCompanyRating(ReviewMessage reviewMessage) {
+        System.out.println("Review Message: ");
+        System.out.println(reviewMessage.getDescription());
+        Company company = companyRepository.findById(reviewMessage.getCompanyId()).orElse(null);
+        if (company != null){
+            double averageRating = reviewClient.getAverageRatingForCompany(reviewMessage.getCompanyId());
+            company.setRating(averageRating);
+            companyRepository.save(company);
+        }else {
+            System.out.println("Company with ID " + reviewMessage.getCompanyId() + "Not Found");
+        }
     }
 }
 

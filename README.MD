@@ -43,3 +43,19 @@ Using Networks
 - Rerunning the pgadmin docker image associating it to created network.
   ```docker run -d --name pgadmin --network my-network -e PGADMIN_DEFAULT_EMAIL=admin@admin.com -e PGADMIN_DEFAULT_PASSWORD=password dpage/pgadmin4```
 - Rerun the ping command to check connectivity. ```docker exec -it pgadmin ping db```
+  
+## RabbitMQ configurations- Running from docker
+```
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports: 
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - postgres
+```
+### Running from the terminal
+```
+docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+```
