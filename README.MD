@@ -59,3 +59,14 @@ Using Networks
 ```
 docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 ```
+
+## Packaging commands
+1. To package using maven ```./mvnw package``` or ```./mvnw clean package```
+2. To verify jar file ```jar -tf  target/companyMs-0.0.1-SNAPSHOT.jar```
+3. To run the jar file ```java -jar companyMs-0.0.1-SNAPSHOT.jar```
+   
+## Building individual images for all microservices
+Navigate to each of the folders and run ```./mvnw spring-boot:build-image "-Dspring-boot.build-image.imageName=georgekibe/servicereg" ```
+Docker push to your account
+Format is docker push georgekibe/<imageName>
+```docker push georgekibe/jobapplicationwebsiteimage```
