@@ -5,6 +5,9 @@ import com.kibe.jobMs.external.Review;
 import com.kibe.jobMs.job.clients.CompanyClient;
 import com.kibe.jobMs.job.clients.ReviewClient;
 import com.kibe.jobMs.job.mapper.JobMapper;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+import io.github.resilience4j.retry.annotation.Retry;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -52,8 +55,13 @@ public class JobServiceImplementation implements JobService{
                 job, company, reviews
         );
     }
+    int attempt  = 1;
     @Override
+    // @CircuitBreaker(name = "companyBreaker", fallbackMethod = "companyFallbackMethod")
+    // @Retry(name = "companyBreaker", fallbackMethod = "companyFallbackMethod")
+    @RateLimiter(name = "companyBreaker", fallbackMethod = "companyFallbackMethod")
     public List<JobDTO> findAllJobs() {
+        System.out.println("Attempt: " + ++attempt);
         List<Job> jobs = jobRepository.findAll();
         List<JobDTO> jobDTOs = new ArrayList<>();
         for (Job job: jobs){
@@ -62,6 +70,11 @@ public class JobServiceImplementation implements JobService{
         }
         //return jobWithCompanyDTOs;
         return jobs.stream().map(this::convertToDTO).collect(Collectors.toList());
+    }
+    public List<String> companyFallbackMethod(Exception e){
+        List<String> list = new ArrayList<>();
+        list.add("Under Maintenance. Please try after some time");
+        return list;
     }
 
     @Override
