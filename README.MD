@@ -66,7 +66,14 @@ docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 3. To run the jar file ```java -jar companyMs-0.0.1-SNAPSHOT.jar```
    
 ## Building individual images for all microservices
-Navigate to each of the folders and run ```./mvnw spring-boot:build-image "-Dspring-boot.build-image.imageName=georgekibe/servicereg" ```
+Navigate to each of the folders and run 
+```./mvnw spring-boot:build-image "-Dspring-boot.build-image.imageName=georgekibe/servicereg" ```
 Docker push to your account
 Format is docker push georgekibe/<imageName>
 ```docker push georgekibe/jobapplicationwebsiteimage```
+
+## Working with kubernetes and minikube
+launch minikube dashboard
+```minikube dashboard```
+Creating a pod
+```kubectl apply -f first-pod.yml```
