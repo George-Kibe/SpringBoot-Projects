@@ -77,3 +77,9 @@ launch minikube dashboard
 ```minikube dashboard```
 Creating a pod
 ```kubectl apply -f first-pod.yml```
+Viewing all pods
+```kubectl get pods```
+Creating a service
+```kubectl apply -f first-service.yml```
+Viewing all services
+```kubectl get service``
