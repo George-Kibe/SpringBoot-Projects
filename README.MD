@@ -79,7 +79,24 @@ Creating a pod
 ```kubectl apply -f first-pod.yml```
 Viewing all pods
 ```kubectl get pods```
+View Everything
+```kubectl get all```
 Creating a service
 ```kubectl apply -f first-service.yml```
 Viewing all services
-```kubectl get service``
+```kubectl get service``` or ```kubectl get services```
+
+Deleting all deployments
+```kubectl delete deployments --all --all-namespaces```
+
+Delete all the services
+```kubectl delete services --all --all-namespaces```
+
+Delete all Pods
+```kubectl delete pods --all --all-namespaces```
+
+Delete all replicasets
+```kubectl delete replicasets --all --all-namespaces```
+
+Using Postgres on Kubernetes
+```kubectl exec -it postgres-0 -- psql -U george```
