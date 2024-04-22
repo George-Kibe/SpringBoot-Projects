@@ -7,7 +7,7 @@ import lombok.*;
 @Getter@Setter@ToString@NoArgsConstructor@AllArgsConstructor
 public class Customer extends BaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "customer_id")
     private Long customerId;
 

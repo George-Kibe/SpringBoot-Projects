@@ -1,18 +1,18 @@
 package com.kibe.accountsMs.mapper;
 
-import com.kibe.accountsMs.dto.AccountsDTO;
-import com.kibe.accountsMs.entity.Accounts;
+import com.kibe.accountsMs.dto.AccountDTO;
+import com.kibe.accountsMs.entity.Account;
 
 public class AccountsMapper {
 
-    public static AccountsDTO mapToAccountsDto(Accounts accounts, AccountsDTO accountsDto) {
+    public static AccountDTO mapToAccountsDto(Account accounts, AccountDTO accountsDto) {
         accountsDto.setAccountNumber(accounts.getAccountNumber());
         accountsDto.setAccountType(accounts.getAccountType());
         accountsDto.setBranchAddress(accounts.getBranchAddress());
         return accountsDto;
     }
 
-    public static Accounts mapToAccounts(AccountsDTO accountsDto, Accounts accounts) {
+    public static Account mapToAccounts(AccountDTO accountsDto, Account accounts) {
         accounts.setAccountNumber(accountsDto.getAccountNumber());
         accounts.setAccountType(accountsDto.getAccountType());
         accounts.setBranchAddress(accountsDto.getBranchAddress());
