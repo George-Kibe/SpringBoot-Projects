@@ -24,6 +24,11 @@ public class AccountController {
                 .body(new ResponseDTO(AccountsConstants.STATUS_201, AccountsConstants.MESSAGE_201));
     }
 
+    @GetMapping("/health")
+    public  ResponseEntity<String> getserverHealth(){
+        return ResponseEntity.status(HttpStatus.OK).body("Server is running fine");
+    }
+
     @GetMapping("/fetch")
     public ResponseEntity<CustomerDTO> fetchAccountDetails(@RequestParam
                                                            @Pattern(regexp="(^$|[0-9]{12})",message = "Mobile number must be 10 digits")
