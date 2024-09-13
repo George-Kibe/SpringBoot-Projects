@@ -3,10 +3,8 @@ package com.kibe.QuizApplication.services;
 import com.kibe.QuizApplication.dao.QuestionDao;
 import com.kibe.QuizApplication.entity.Question;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Order;
-import jakarta.persistence.criteria.Root;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +14,7 @@ import java.util.Random;
 @Service
 public class QuestionService {
     private final QuestionDao questionDao;
+    @PersistenceContext
     private final EntityManager entityManager;
 
     public QuestionService(QuestionDao questionDao, EntityManager entityManager) {
@@ -97,8 +96,14 @@ public class QuestionService {
         // Return null if the question is not found
         return null;
     }
-
     public List<Question> getRandomQuestionsByCategory(String category, int numQ) {
-        return null;
+        String sql = "SELECT * FROM question q WHERE q.category = :category ORDER BY RANDOM() LIMIT :numQ";
+
+        Query query = entityManager.createNativeQuery(sql, Question.class);
+        query.setParameter("category", category);
+        query.setParameter("numQ", numQ);
+
+        // Execute the query and return the result as a list
+        return query.getResultList();
     }
 }

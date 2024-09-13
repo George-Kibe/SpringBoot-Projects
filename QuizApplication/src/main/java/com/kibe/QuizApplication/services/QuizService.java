@@ -6,7 +6,10 @@ import com.kibe.QuizApplication.entity.Question;
 import com.kibe.QuizApplication.entity.Quiz;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class QuizService {
@@ -22,12 +25,13 @@ public class QuizService {
 
     public ResponseEntity<String> createQuiz(String category, int numQ, String title) {
         List<Question> questions = questionDao.findRandomQuestionsByCategory(category, numQ);
-        // List<Question> questions = questionService.getRandomQuestionsByCategory(category, numQ);
-
+        //List<Question> questions = questionService.getRandomQuestionsByCategory(category, numQ);
+        System.out.println("Questions: " + questions);
 
         Quiz quiz = new Quiz();
         quiz.setTitle(title);
         quiz.setQuestions(questions);
+
         quizDao.save(quiz);
         return ResponseEntity.ok("Quiz created");
     }
