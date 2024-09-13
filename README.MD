@@ -1,5 +1,4 @@
 ### Images: 
-## Continue from 9:50:52
 Docker images are template that define the container and its dependencies
 ### Containers
 Containers are runtime environments created from docker images

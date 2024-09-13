@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d941760e-046d-4dd5-9ff9-a82031fcd2ab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../eCommerceApp/config-server/src/main/resources/configurations/discovery-server.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eCommerceApp/config-server/src/main/resources/configurations/discovery-service.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eCommerceApp/discovery-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../eCommerceApp/discovery-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eCommerceApp/discovery-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../eCommerceApp/discovery-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/docker-compose.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/src/main/java/com/kibe/jobAppProject/JobAppProjectApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/src/main/java/com/kibe/jobAppProject/controllers/CompanyController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/src/main/java/com/kibe/jobAppProject/controllers/JobController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/src/main/java/com/kibe/jobAppProject/controllers/ReviewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/src/main/java/com/kibe/jobAppProject/entity/Company.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/src/main/java/com/kibe/jobAppProject/entity/Job.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/src/main/java/com/kibe/jobAppProject/entity/Review.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/src/main/java/com/kibe/jobAppProject/repos/CompanyRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/src/main/java/com/kibe/jobAppProject/repos/JobRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/src/main/java/com/kibe/jobAppProject/repos/ReviewRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/src/main/java/com/kibe/jobAppProject/services/CompanyService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/src/main/java/com/kibe/jobAppProject/services/CompanyServiceImplementation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/src/main/java/com/kibe/jobAppProject/services/JobService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/src/main/java/com/kibe/jobAppProject/services/JobServiceImplementation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/src/main/java/com/kibe/jobAppProject/services/ReviewService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/src/main/java/com/kibe/jobAppProject/services/ReviewServiceImplementation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jobAppProject/src/test/java/com/kibe/jobAppProject/JobAppProjectApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "George-Kibe"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/George-Kibe/SpringBoot-Projects.git",
+    "accountId": "462abeae-39c2-4dc9-8a72-5a4e4df1007e"
+  }
+}]]></component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2lyGz5zKzIKJdGGlatzAZHxldI0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.JobApplicationMongoApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/georgekibe/Programming/spring-boot/Projects/JobApplicationMongo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="JobApplicationMongoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="JobApplicationMongo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kibe.JobApplicationMongo.JobApplicationMongoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d941760e-046d-4dd5-9ff9-a82031fcd2ab" name="Changes" comment="" />
+      <created>1726145161940</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726145161940</updated>
+      <workItem from="1726145162989" duration="3305000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
