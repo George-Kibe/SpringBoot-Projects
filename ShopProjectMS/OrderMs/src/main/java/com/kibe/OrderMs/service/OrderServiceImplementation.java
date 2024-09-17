@@ -1,5 +1,6 @@
 package com.kibe.OrderMs.service;
 
+import com.kibe.OrderMs.client.InventoryClient;
 import com.kibe.OrderMs.dto.OrderRequest;
 import com.kibe.OrderMs.dto.OrderResponse;
 import com.kibe.OrderMs.entity.Order;
@@ -14,16 +15,23 @@ import java.util.UUID;
 @Service
 public class OrderServiceImplementation implements OrderService {
     private final OrderRepository orderRepository;
+    private final InventoryClient inventoryClient;
+
     @Override
     public void placeOrder(OrderRequest orderRequest) {
-        // map order request to order object
-        Order order = new Order();
-        order.setOrderNumber(UUID.randomUUID().toString());
-        order.setPrice(orderRequest.price());
-        order.setSkuCode(orderRequest.skuCode());
-        order.setQuantity(orderRequest.quantity());
-        // save to order repository
-        orderRepository.save(order);
+        var productIsInStock = inventoryClient.isInStock(orderRequest.skuCode(), orderRequest.quantity());
+        if (productIsInStock) {
+            Order order = new Order();
+            order.setOrderNumber(UUID.randomUUID().toString());
+            order.setPrice(orderRequest.price());
+            order.setSkuCode(orderRequest.skuCode());
+            order.setQuantity(orderRequest.quantity());
+            // save to order repository
+            orderRepository.save(order);
+        } else {
+            throw new RuntimeException("Product with skuCode " + orderRequest.skuCode() + " is not in stock");
+        }
+
     }
 
     @Override
