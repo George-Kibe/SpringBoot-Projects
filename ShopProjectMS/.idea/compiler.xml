@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="OrderMs" />
         <module name="InventoryMs" />
+        <module name="NotificationMs" />
         <module name="ProductMs" />
         <module name="ApiGateway" />
       </profile>
@@ -18,6 +19,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ApiGateway" options="-parameters" />
       <module name="InventoryMs" options="-parameters" />
+      <module name="NotificationMs" options="-parameters" />
       <module name="OrderMs" options="-parameters" />
       <module name="ProductMs" options="-parameters" />
     </option>
