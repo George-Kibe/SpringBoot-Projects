@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="207ac386-412a-4f4e-ae73-b44bf465ac99" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../AuthProject/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthProject/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthProject/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthProject/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthProject/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthProject/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthProject/src/main/java/com/kibe/AuthProject/AuthProjectApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthProject/src/main/java/com/kibe/AuthProject/controllers/HomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthProject/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthProject/src/test/java/com/kibe/AuthProject/AuthProjectApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/userService/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -48,6 +43,13 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -69,11 +71,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.ActivityServiceApplication.executor": "Run",
     "Spring Boot.UserServiceApplication (1).executor": "Run",
     "Spring Boot.UserServiceApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/georgekibe/Programming/spring-boot-projects/fitnessApplication",
+    "last_opened_file_path": "/Users/georgekibe/Programming/spring-boot-projects/fitnessApplication/activityService/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -82,27 +85,59 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "run.configurations.included.in.services": "true",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.activityService.services" />
+      <recent name="com.example.activityService.dto" />
+      <recent name="com.example.activityService.models" />
+      <recent name="com.fitness.userService.dto" />
       <recent name="com.fitness.userService.models" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/activityService/src/main/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="configurationStatuses">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <map>
+              <entry key="ActivityServiceApplication" value="STOPPED" />
+              <entry key="UserServiceApplication (1)" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="RunManager" selected="Spring Boot.UserServiceApplication (1)">
-    <configuration name="UserServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="userService" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fitness.userService.UserServiceApplication" />
+    <configuration name="ActivityServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="activityService" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.activityService.ActivityServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fitness.UserService.UserServiceApplication" />
+    <configuration name="UserServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="userService" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fitness.userService.UserServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -128,7 +163,7 @@
       <workItem from="1774528463334" duration="1224000" />
       <workItem from="1774529702318" duration="217000" />
       <workItem from="1774529949046" duration="251000" />
-      <workItem from="1774530211969" duration="1808000" />
+      <workItem from="1774530211969" duration="15882000" />
     </task>
     <servers />
   </component>
