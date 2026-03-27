@@ -22,10 +22,17 @@ public class UserController {
                 userService.getUserProfile(userId)
         );
     }
+    @GetMapping("/{userId}/validate")
+    public ResponseEntity<Boolean> validateUserProfile(@PathVariable String userId) {
+        return ResponseEntity.ok(
+                userService.existsById(userId)
+        );
+    }
     @PostMapping("/register")
     public ResponseEntity<UserResponse> registerUser(
             @Valid @RequestBody RegisterUserRequest registerUserRequest) {
         UserResponse user = userService.register(registerUserRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
     }
+
 }

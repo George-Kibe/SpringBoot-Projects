@@ -1,4 +1,4 @@
-package com.example.activityService.models;
+package com.fitness.activityService.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

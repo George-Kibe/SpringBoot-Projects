@@ -9,6 +9,21 @@
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activityService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/activityService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activityService/src/main/java/com/example/activityService/ActivityServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/activityService/src/main/java/com/fitness/activityService/ActivityServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activityService/src/main/java/com/example/activityService/config/MongoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/activityService/src/main/java/com/fitness/activityService/config/MongoConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activityService/src/main/java/com/example/activityService/controllers/ActivityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/activityService/src/main/java/com/fitness/activityService/controllers/ActivityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activityService/src/main/java/com/example/activityService/dto/ActivityRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/activityService/src/main/java/com/fitness/activityService/dto/ActivityRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activityService/src/main/java/com/example/activityService/dto/ActivityResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/activityService/src/main/java/com/fitness/activityService/dto/ActivityResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activityService/src/main/java/com/example/activityService/models/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/activityService/src/main/java/com/fitness/activityService/models/Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activityService/src/main/java/com/example/activityService/models/ActivityType.java" beforeDir="false" afterPath="$PROJECT_DIR$/activityService/src/main/java/com/fitness/activityService/models/ActivityType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activityService/src/main/java/com/example/activityService/repository/ActivityRespository.java" beforeDir="false" afterPath="$PROJECT_DIR$/activityService/src/main/java/com/fitness/activityService/repository/ActivityRespository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activityService/src/main/java/com/example/activityService/services/ActivityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/activityService/src/main/java/com/fitness/activityService/services/ActivityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activityService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/activityService/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activityService/src/test/java/com/example/activityService/ActivityServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/activityService/src/test/java/com/fitness/activityService/ActivityServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/userService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userService/src/main/java/com/fitness/userService/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/userService/src/main/java/com/fitness/userService/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userService/src/main/java/com/fitness/userService/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/userService/src/main/java/com/fitness/userService/services/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/userService/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,12 +86,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.ActivityServiceApplication (1).executor": "Run",
     "Spring Boot.ActivityServiceApplication.executor": "Run",
+    "Spring Boot.EurekaServerApplication.executor": "Run",
     "Spring Boot.UserServiceApplication (1).executor": "Run",
     "Spring Boot.UserServiceApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/georgekibe/Programming/spring-boot-projects/fitnessApplication/activityService/src/main/resources",
+    "last_opened_file_path": "/Users/georgekibe/Programming/spring-boot-projects/fitnessApplication/eurekaServer/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -99,10 +116,14 @@
       <recent name="com.fitness.userService.models" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/eurekaServer/src/main/resources" />
       <recent name="$PROJECT_DIR$/activityService/src/main/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.activityService" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -111,26 +132,26 @@
         <option value="KtorApplicationConfigurationType" />
         <option value="MicronautRunConfigurationType" />
         <option value="QuarkusRunConfigurationType" />
-        <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
-    <option name="configurationStatuses">
-      <map>
-        <entry key="SpringBootApplicationConfigurationType">
-          <value>
-            <map>
-              <entry key="ActivityServiceApplication" value="STOPPED" />
-              <entry key="UserServiceApplication (1)" value="STOPPED" />
-            </map>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserServiceApplication (1)">
-    <configuration name="ActivityServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.ActivityServiceApplication (1)">
+    <configuration name="ActivityServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="activityService" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.activityService.ActivityServiceApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fitness.activityService.ActivityServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fitness.activityService.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="eurekaServer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fitness.eurekaServer.EurekaServerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -142,6 +163,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ActivityServiceApplication (1)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -163,7 +189,7 @@
       <workItem from="1774528463334" duration="1224000" />
       <workItem from="1774529702318" duration="217000" />
       <workItem from="1774529949046" duration="251000" />
-      <workItem from="1774530211969" duration="15882000" />
+      <workItem from="1774530211969" duration="22646000" />
     </task>
     <servers />
   </component>

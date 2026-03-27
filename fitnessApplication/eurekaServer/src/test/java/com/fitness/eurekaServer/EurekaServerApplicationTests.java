@@ -1,10 +1,10 @@
-package com.example.activityService;
+package com.fitness.eurekaServer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ActivityServiceApplicationTests {
+class EurekaServerApplicationTests {
 
 	@Test
 	void contextLoads() {

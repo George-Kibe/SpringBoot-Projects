@@ -1,11 +1,17 @@
-package com.example.activityService.services;
+package com.fitness.activityService.services;
 
-import com.example.activityService.dto.ActivityRequest;
-import com.example.activityService.dto.ActivityResponse;
-import com.example.activityService.models.Activity;
-import com.example.activityService.repository.ActivityRespository;
+import com.fitness.activityService.dto.ActivityRequest;
+import com.fitness.activityService.dto.ActivityResponse;
+import com.fitness.activityService.models.Activity;
+import com.fitness.activityService.repository.ActivityRespository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -13,6 +19,7 @@ public class ActivityService {
     private final ActivityRespository activityRespository;
 
     public ActivityResponse createActivity(ActivityRequest activityRequest) {
+        // validate Activity request
         Activity activity =  Activity.builder()
             .userId(activityRequest.getUserId())
             .type(activityRequest.getType())
@@ -37,5 +44,24 @@ public class ActivityService {
         activityResponse.setCreatedAt(activity.getCreatedAt());
         activityResponse.setUpdatedAt(activity.getUpdatedAt());
         return activityResponse;
+    }
+
+    public List<ActivityResponse> getUserActivities(String userId) {
+        if (userId == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "userId is null");
+        }
+        List<Activity> activities = activityRespository.findByUserId(userId);
+        return activities.stream()
+                .map(this::mapToResponse)
+                .collect(Collectors.toList());
+    }
+
+    public ActivityResponse getActivity(String activityId) {
+        Optional<Activity> activity = activityRespository.findById(activityId);
+        if (activity.isPresent()) {
+            return mapToResponse(activity.get());
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Activity with that ID not found!");
+        }
     }
 }

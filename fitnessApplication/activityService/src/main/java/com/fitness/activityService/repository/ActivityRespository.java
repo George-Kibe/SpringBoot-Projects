@@ -1,9 +1,14 @@
-package com.example.activityService.repository;
+package com.fitness.activityService.repository;
 
-import com.example.activityService.models.Activity;
+import com.fitness.activityService.models.Activity;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface ActivityRespository extends MongoRepository<Activity,String> {
+    List<Activity> findByUserId(String userId);
+
+    ;
 }
