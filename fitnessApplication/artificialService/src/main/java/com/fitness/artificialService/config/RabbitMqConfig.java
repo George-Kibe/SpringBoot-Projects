@@ -1,4 +1,4 @@
-package com.fitness.activityService.config;
+package com.fitness.artificialService.config;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;

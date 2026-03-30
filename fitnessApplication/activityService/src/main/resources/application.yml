@@ -4,6 +4,11 @@ spring:
   mongodb:
     uri: mongodb://georgekibe:test1234@localhost:27017/fitness_application?authSource=admin
     database: fitness_application
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: georgekibe
+    password: test1234
 
 server:
   port: 8082
@@ -12,14 +17,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-#rabbitmq:
-#  exchange:
-#    name: fitness.exchange
-#  queue:
-#    activity.queue
-#  routing:
-#    activity.tracking
-#
+
 rabbitmq:
   exchange:
     name: fitness.exchange

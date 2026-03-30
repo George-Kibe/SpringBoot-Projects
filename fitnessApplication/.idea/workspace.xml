@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="207ac386-412a-4f4e-ae73-b44bf465ac99" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/activityService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/activityService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activityService/src/main/java/com/fitness/activityService/config/RabbitMqConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/activityService/src/main/java/com/fitness/activityService/config/RabbitMqConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/activityService/src/main/java/com/fitness/activityService/services/ActivityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/activityService/src/main/java/com/fitness/activityService/services/ActivityService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/activityService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/activityService/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/com/fitness/userService/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/userService/src/main/java/com/fitness/userService/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artificialService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/artificialService/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +90,7 @@
     "Spring Boot.UserServiceApplication (1).executor": "Run",
     "Spring Boot.UserServiceApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/georgekibe/Programming/spring-boot-projects/fitnessApplication",
@@ -146,20 +141,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ArtificialServiceApplication">
-    <configuration name="AiServiceApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.fitness.aiService.AiServiceApplication" />
-      <module name="main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fitness.aiService.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.ActivityServiceApplication (1)">
     <configuration name="AiServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fitness.aiService.AiServiceApplication" />
       <module name="aiService" />
@@ -179,19 +161,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.fitness.activityService.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AiServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="aiService" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fitness.aiService.AiServiceApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fitness.aiService.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -221,19 +190,15 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.AiServiceApplication (1)" />
       <item itemvalue="Application.AiServiceApplication" />
       <item itemvalue="Spring Boot.ArtificialServiceApplication" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.UserServiceApplication (1)" />
-      <item itemvalue="Spring Boot.AiServiceApplication" />
       <item itemvalue="Spring Boot.ActivityServiceApplication (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.AiServiceApplication" />
         <item itemvalue="Spring Boot.ActivityServiceApplication (1)" />
-        <item itemvalue="Application.AiServiceApplication (1)" />
         <item itemvalue="Application.AiServiceApplication" />
       </list>
     </recent_temporary>
@@ -265,7 +230,7 @@
       <workItem from="1774644770086" duration="2483000" />
       <workItem from="1774729161429" duration="991000" />
       <workItem from="1774732235860" duration="19000" />
-      <workItem from="1774732322658" duration="9041000" />
+      <workItem from="1774732322658" duration="13129000" />
     </task>
     <servers />
   </component>
