@@ -6,15 +6,15 @@ import com.fitness.userService.models.User;
 import com.fitness.userService.repository.UserRepository;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.jspecify.annotations.Nullable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.net.URI;
-
 @Service
 @AllArgsConstructor
+@Slf4j
 public class UserService {
     private UserRepository userRepository;
     public @Nullable UserResponse getUserProfile(String userId) {
@@ -59,6 +59,7 @@ public class UserService {
     }
 
     public Boolean existsById(String userId) {
+        log.info("Calling User Validation API for user id {}", userId);
         return userRepository.existsById(userId);
     }
 }

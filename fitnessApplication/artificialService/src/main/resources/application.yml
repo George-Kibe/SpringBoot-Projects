@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: artificialService
+  mongodb:
+    uri: mongodb://georgekibe:test1234@localhost:27017/fitness_recommendations?authSource=admin
+    database: fitness_recommendations
+server:
+  port: 8083
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

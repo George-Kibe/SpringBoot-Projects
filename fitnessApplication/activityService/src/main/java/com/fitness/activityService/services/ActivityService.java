@@ -5,6 +5,7 @@ import com.fitness.activityService.dto.ActivityResponse;
 import com.fitness.activityService.models.Activity;
 import com.fitness.activityService.repository.ActivityRespository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -17,9 +18,18 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ActivityService {
     private final ActivityRespository activityRespository;
+    private final UserValidationService userValidationService;
+
+    @Value()
+    private String exchange;
+    private String routing;
 
     public ActivityResponse createActivity(ActivityRequest activityRequest) {
-        // validate Activity request
+        // validate user from userId
+        boolean isValidUser = userValidationService.validateUser(activityRequest.getUserId());
+        if (!isValidUser) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid user id");
+        }
         Activity activity =  Activity.builder()
             .userId(activityRequest.getUserId())
             .type(activityRequest.getType())

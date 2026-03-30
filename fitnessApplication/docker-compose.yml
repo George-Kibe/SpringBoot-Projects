@@ -18,5 +18,16 @@ services:
     volumes:
       - mongo-data:/data/db
 
+  rabbitmq:
+    image: rabbitmq:4-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"     # AMQP (app communication)
+      - "15672:15672"   # Management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: georgekibe
+      RABBITMQ_DEFAULT_PASS: test1234
+    restart: unless-stopped
+
 volumes:
   mongo-data:
