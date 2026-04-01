@@ -17,7 +17,8 @@ public class GlobalExceptionHandler {
                 .status(ex.getStatusCode())
                 .body(Map.of(
                         "status", ex.getStatusCode().value(),
-                        "error", ex.getReason()
+                        "error", ex.getReason(),
+                        "message", ex.getReason()
                 ));
     }
 }

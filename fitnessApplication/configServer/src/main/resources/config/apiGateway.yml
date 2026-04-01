@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: apiGateway
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: userService
+              uri: lb://USERSERVICE
+              predicates:
+                - Path=/api/users/**
+            - id: activityService
+              uri: lb://ACTIVITYSERVICE
+              predicates:
+                - Path=/api/activities/**
+            - id: artificialService
+              uri: lb://ARTIFICIALSERVICE
+              predicates:
+                - Path=/api/recommendations/**
+          trusted-proxies: ".*"   # required in 2025.x — X-Forwarded headers blocked by default
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+logging:
+  level:
+#    org.springframework.cloud.gateway: DEBUG
+    org.springframework.cloud.gateway: TRACE

@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: artificialService
+  mongodb:
+    uri: mongodb://georgekibe:test1234@localhost:27017/fitness_recommendations?authSource=admin
+    database: fitness_recommendations
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: georgekibe
+    password: test1234
+
+server:
+  port: 8083
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+rabbitmq:
+  exchange:
+    name: fitness.exchange
+  queue:
+    name: activity.queue
+  routing:
+    key: activity.tracking
+
+gemini:
+  api:
+    url: ${GEMINI_API_URL}
+    key: ${GEMINI_API_KEY}
